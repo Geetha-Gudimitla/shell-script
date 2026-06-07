@@ -31,4 +31,4 @@ else
   else 
     echo "Already Installed git"
   fi
-     
+fi
