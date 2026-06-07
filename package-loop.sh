@@ -6,10 +6,10 @@ then
    exit 1
 else
   dnf list installed mysql 
-  if [$? -ne 0]
+  if [ $? -ne 0]
   then 
     dnf install mysql 
-    if [$? -ne 0]
+    if [ $? -ne 0]
      then 
        echo "Installation failed mysql"
        exit 1
@@ -21,10 +21,10 @@ else
   fi
 
    dnf list installed git
-  if [$? -ne 0]
+  if [ $? -ne 0]
   then 
     dnf install git 
-    if [$? -ne 0]
+    if [ $? -ne 0]
      then 
        echo "Installation failed git"
        exit 1
