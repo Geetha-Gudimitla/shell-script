@@ -1,6 +1,6 @@
 #!/bin/bash
 USERID=$(id -u)
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then
    echo "Need Sudo access"
    exit 1
