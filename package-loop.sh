@@ -1,14 +1,12 @@
 #!/bin/bash
-input1=$1
-input2=$2
 validate(input1,input2){
 
- if [ $input1 -ne 0 ]
+ if [ $1 -ne 0 ]
      then 
-       echo " failed "
+       echo " $2 failed "
        exit 1
     else
-       echo "Installation mysql Success "
+       echo "$2 Success "
     fi
 
 }
