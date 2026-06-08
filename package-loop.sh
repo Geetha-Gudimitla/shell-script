@@ -1,5 +1,5 @@
 #!/bin/bash
-validate(input1,input2){
+validate($1, $2){
 
  if [ $1 -ne 0 ]
      then 
