@@ -1,5 +1,5 @@
 #!/bin/bash
-validate($1, $2){
+validate(){
 
  if [ $1 -ne 0 ]
      then 
@@ -20,7 +20,7 @@ else
   if [ $? -ne 0 ]
   then 
     dnf install mysql -y
-    validate $? Installation mysql
+    validate $? "Installation mysql"
     # if [ $? -ne 0 ]
     #  then 
     #    echo "Installation failed mysql"
@@ -38,7 +38,7 @@ else
   then 
 
     dnf install git -y
-    validate $? Installation git 
+    validate $? "Installation git" 
 
     # if [ $? -ne 0 ]
 
