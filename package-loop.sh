@@ -1,4 +1,17 @@
 #!/bin/bash
+input1=$1
+input2=$2
+validate(input1,input2){
+
+ if [ $input1 -ne 0 ]
+     then 
+       echo " failed "
+       exit 1
+    else
+       echo "Installation mysql Success "
+    fi
+
+}
 USERID=$(id -u)
 if [ $? -ne 0 ]
 then
@@ -9,13 +22,14 @@ else
   if [ $? -ne 0 ]
   then 
     dnf install mysql -y
-    if [ $? -ne 0 ]
-     then 
-       echo "Installation failed mysql"
-       exit 1
-    else
-       echo "Installation Success mysql"
-    fi
+    validate $? Installation mysql
+    # if [ $? -ne 0 ]
+    #  then 
+    #    echo "Installation failed mysql"
+    #    exit 1
+    # else
+    #    echo "Installation Success mysql"
+    # fi
   else 
     echo "Already Installed mysql"
   fi
@@ -26,15 +40,16 @@ else
   then 
 
     dnf install git -y
+    validate $? Installation git 
 
-    if [ $? -ne 0 ]
+    # if [ $? -ne 0 ]
 
-     then 
-       echo "Installation failed git"
-       exit 1
-    else
-       echo "Installation Success git "
-    fi
+    #  then 
+    #    echo "Installation git failed "
+    #    exit 1
+    # else
+    #    echo "Installation git Success  "
+    # fi
   else 
     echo "Already Installed git"
   fi
